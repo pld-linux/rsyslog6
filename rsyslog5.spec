@@ -13,12 +13,12 @@ Summary(pl.UTF-8):	Programy logujące zdarzenia w systemie i jądrze Linuksa
 Summary(pt_BR.UTF-8):	Registrador de log do sistema linux
 Summary(tr.UTF-8):	Linux sistem ve çekirdek kayıt süreci
 Name:		rsyslog5
-Version:	5.3.2
+Version:	5.3.3
 Release:	1
 License:	GPL v3
 Group:		Daemons
 Source0:	http://download.rsyslog.com/rsyslog/%{_nm}-%{version}.tar.gz
-# Source0-md5:	77ab35c322ec57a6a33bb810717a803a
+# Source0-md5:	837e50ff8d162e1a00ba0fd16b7f0d8d
 Source1:	%{_nm}.init
 Source2:	%{_nm}.conf
 Source3:	%{_nm}.sysconfig
@@ -49,9 +49,9 @@ Provides:	group(syslog)
 Provides:	syslogdaemon
 Provides:	user(syslog)
 Obsoletes:	msyslog
+Obsoletes:	rsyslog
 Obsoletes:	sysklogd
 Obsoletes:	syslog-ng
-Obsoletes:	rsyslog
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -272,8 +272,9 @@ fi
 %attr(755,root,root) %{_libdir}/rsyslog/lmtcpsrv.so
 %attr(755,root,root) %{_libdir}/rsyslog/lmzlibw.so
 %attr(755,root,root) %{_libdir}/rsyslog/omtesting.so
-%{_mandir}/man5/*
-%{_mandir}/man8/*
+%{_mandir}/man5/rsyslog.conf.5*
+%{_mandir}/man8/rsyslogd.8*
+
 
 #%files klogd
 #%defattr(644,root,root,755)
