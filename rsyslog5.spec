@@ -258,13 +258,11 @@ fi
 %attr(640,root,root) %ghost /var/log/*
 %attr(755,root,root) %{_sbindir}/rsyslogd
 %dir %{_libdir}/rsyslog
-%attr(755,root,root) %{_libdir}/rsyslog/omsnmp.so
 %attr(755,root,root) %{_libdir}/rsyslog/imklog.so
 %attr(755,root,root) %{_libdir}/rsyslog/immark.so
 %attr(755,root,root) %{_libdir}/rsyslog/imtcp.so
 %attr(755,root,root) %{_libdir}/rsyslog/imudp.so
 %attr(755,root,root) %{_libdir}/rsyslog/imuxsock.so
-%attr(755,root,root) %{_libdir}/rsyslog/lmgssutil.so
 %attr(755,root,root) %{_libdir}/rsyslog/lmnet.so
 %attr(755,root,root) %{_libdir}/rsyslog/lmnetstrms.so
 %attr(755,root,root) %{_libdir}/rsyslog/lmnsd_ptcp.so
@@ -274,6 +272,9 @@ fi
 %attr(755,root,root) %{_libdir}/rsyslog/lmtcpsrv.so
 %attr(755,root,root) %{_libdir}/rsyslog/lmzlibw.so
 %attr(755,root,root) %{_libdir}/rsyslog/omruleset.so
+%if %{with snmp}
+%attr(755,root,root) %{_libdir}/rsyslog/omsnmp.so
+%endif
 %attr(755,root,root) %{_libdir}/rsyslog/omtesting.so
 %{_mandir}/man5/rsyslog.conf.5*
 %{_mandir}/man8/rsyslogd.8*
@@ -303,5 +304,6 @@ fi
 %files gssapi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/rsyslog/imgssapi.so
+%attr(755,root,root) %{_libdir}/rsyslog/lmgssutil.so
 %attr(755,root,root) %{_libdir}/rsyslog/omgssapi.so
 %endif
