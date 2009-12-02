@@ -14,7 +14,7 @@ Summary(pt_BR.UTF-8):	Registrador de log do sistema linux
 Summary(tr.UTF-8):	Linux sistem ve çekirdek kayıt süreci
 Name:		rsyslog5
 Version:	5.5.1
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		Daemons
 Source0:	http://download.rsyslog.com/rsyslog/%{_nm}-%{version}.tar.gz
@@ -156,7 +156,7 @@ powszechnie używane do uwierzytelniania Kerberos.
 	%{?with_pgsql:--enable-pgsql} \
 	%{?with_snmp:--enable-snmp}
 
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
