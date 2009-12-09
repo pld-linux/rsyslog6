@@ -14,7 +14,7 @@ Summary(pt_BR.UTF-8):	Registrador de log do sistema linux
 Summary(tr.UTF-8):	Linux sistem ve çekirdek kayıt süreci
 Name:		rsyslog5
 Version:	5.5.1
-Release:	4
+Release:	5
 License:	GPL v3
 Group:		Daemons
 Source0:	http://download.rsyslog.com/rsyslog/%{_nm}-%{version}.tar.gz
@@ -23,6 +23,7 @@ Source1:	%{_nm}.init
 Source2:	%{_nm}.conf
 Source3:	%{_nm}.sysconfig
 Source4:	%{_nm}.logrotate
+Patch0:		%{name}-atomic64.patch
 URL:		http://www.rsyslog.com/
 %{?with_gssapi:BuildRequires:	heimdal-devel}
 %{?with_mysql:BuildRequires:	mysql-devel}
@@ -148,6 +149,7 @@ powszechnie używane do uwierzytelniania Kerberos.
 
 %prep
 %setup -q -n %{_nm}-%{version}
+%patch0 -p1
 
 %build
 %configure \
