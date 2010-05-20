@@ -13,12 +13,12 @@ Summary(pl.UTF-8):	Programy logujące zdarzenia w systemie i jądrze Linuksa
 Summary(pt_BR.UTF-8):	Registrador de log do sistema linux
 Summary(tr.UTF-8):	Linux sistem ve çekirdek kayıt süreci
 Name:		rsyslog5
-Version:	5.5.4
+Version:	5.5.5
 Release:	1
 License:	GPL v3
 Group:		Daemons
 Source0:	http://download.rsyslog.com/rsyslog/%{_nm}-%{version}.tar.gz
-# Source0-md5:	824df2504955df1619e5ec2915d783aa
+# Source0-md5:	bd432dd7307312330962adaecc0d0e0a
 Source1:	%{_nm}.init
 Source2:	%{_nm}.conf
 Source3:	%{_nm}.sysconfig
